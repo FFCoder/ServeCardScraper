@@ -36,3 +36,5 @@ const getBalance = async function(userName, passWord, securityAnswer) {
     await browser.close();
     return parseFloat(balance.replace("$",""));
 }
+
+module.exports = getBalance;
