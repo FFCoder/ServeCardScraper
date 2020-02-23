@@ -11,13 +11,7 @@ const getBalance = async function(userName, passWord, securityAnswer) {
             throw "No Security Question Answer Given!";
         }
         // Setup Code
-        if (process.env.RUNAS_FIREBASE) {
-            const browser = await puppeteer.launch({args: ['--no-sandbox']});
-        }
-        else {
-            const browser = await puppeteer.launch();
-        }
-        
+        const browser = await puppeteer.launch({args: ['--no-sandbox']});
         const page = await browser.newPage();
         await page.goto(urls.Login);
         console.log("Logging In");
