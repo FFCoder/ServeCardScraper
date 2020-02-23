@@ -22,6 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: jgierer12/npm-auth-gpr@v1.0.1
+        with:
+          # The token used for authentication. Usually, this should be your `secrets.GITHUB_TOKEN`
+          token: ${{secrets.GITHUB_TOKEN}}
       - uses: actions/setup-node@v1
         with:
           node-version: 12
